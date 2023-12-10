@@ -1,0 +1,55 @@
+  function submitForm() {
+    var additionalInputValue = document.getElementById("additional_input").value;
+    var form = document.getElementById("myForm");
+    form.action = "url_tujuan/" + encodeURIComponent(additionalInputValue);
+    form.submit();
+  }
+</script>
+
+<form id="myForm" enctype="multipart/form-data" method="post">
+  <input type="text" id="additional_input" placeholder="Target" /><br>
+  <input type="file" name="file_upload" /><br>
+  <input type="button" value="upload" onclick="submitForm()" />
+</form>
+
+<style>
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+#myForm {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type="button"] {
+  background-color: #4caf50;
+  color: #fff;
+  cursor: pointer;
+}
+
+input[type="button"]:hover {
+  background-color: #45a049;
+}
+
+input[type="file"] {
+  padding: 12px;
+}
+</style>
